@@ -1,12 +1,7 @@
-def _doubleIt(number: int):
-    while number < 100:
-        num = number * number
-        print("Number " + number.__str__() + " Double is "+ num.__str__())
-        if(number>100):
-            break
-
-
-if __name__ == '__main__':
-    num : int = int(input("Enter the number!"))
-    print(_doubleIt(num))
-
+number = int(input("Enter a number: "))
+while number < 10000:
+    numb = number * 222;
+    print(str(number) +" Double is :" + str(numb))
+    if numb==10000:
+        break
+    number = numb 
