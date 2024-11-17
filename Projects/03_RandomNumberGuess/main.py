@@ -10,9 +10,10 @@ random_number = random.randint(0, 9)
 allowed_attempts: int = 5;
 guess = int(input("Enter a guess: "))
 while True:
-    if allowed_attempts > 0:
+    if allowed_attempts > 1:
         if guess == random_number:
             print("Congrats! The number was: ", random_number)
+            print("You still have ", allowed_attempts, " attempts left")
             break
         elif guess > random_number:
             print("Your guess is too high")
@@ -26,10 +27,9 @@ while True:
         print("Your guess is: ", guess)
         print("The number was: ", random_number)
         break
-    else:
-        print("You have ", allowed_attempts, " attempts left")
-        guess = int(input("Enter a new number: "))
-        continue
+    elif allowed_attempts == 1:
+        print("You have ", allowed_attempts, " attempt left")
+        allowed_attempts -= 1
     guess = int(input("Enter a new number: "))
     continue
 
